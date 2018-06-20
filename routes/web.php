@@ -77,8 +77,6 @@ Route::group(['prefix' => 'usuario', 'middleware' => 'auth'], function () {
 
     Route::delete('borrar-perfil/{id}', ['as' => 'borrar_perfil', 'uses' => 'UserController@borrar_perfil']);
 
-    Route::get('perfil/{id}', ['as' => 'perfil_publico', 'uses' => 'UserController@perfil_publico']);
-
     Route::post('comprobar-contraseña/{id}', ['as' => 'comprobar_contraseña', 'uses' => 'UserController@comprobar_password']);
 
     Route::get('buscar-usuario', ['as' => 'buscar_usuario', 'uses' => 'UserController@autocomplete_usuarios']);
@@ -89,7 +87,10 @@ Route::group(['prefix' => 'errores'], function () {
     Route::get('403', ['as' => 'error_403', 'uses' => 'ErrorsController@error_403']);
 
     Route::get('404', ['as' => 'error_404', 'uses' => 'ErrorsController@error_404']);
+
     Route::get('405', ['as' => 'error_405', 'uses' => 'ErrorsController@error_405']);
+
+    Route::get('500', ['as' => 'error_500', 'uses' => 'ErrorsController@error_500']);
 
 });
 
@@ -105,8 +106,6 @@ Route::group(['prefix'=>'mensajes','middleware'=>'auth'],function () {
     Route::get('borrar-conversaciones-vacias', ['as' => 'eliminar_conversaciones_vacias', 'uses' => 'MensajesController@eliminar_conversaciones_vacias']);
 
     Route::get('borrar-converacion/{id}', ['as' => 'eliminar_conversacion', 'uses' => 'MensajesController@eliminar_conversacion']);
-
-
 
 });
 

@@ -26,7 +26,7 @@
                        class="form-control{{ $errors->has('email') ? ' invalid' : '' }}"
                        name="email" value="{{ old('email') }}" required autofocus>
 
-                <label for="form2">Your email</label>
+                <label for="form2">Email</label>
                 @if ($errors->has('email'))
                     <span class="invalid-feedback ml-5">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -59,9 +59,10 @@
         <div class="modal-footer">
             <div class="options row">
                 <div class="checkbox  justify-content-start">
-                    <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recuerdame
-                    </label>
+
+                        <input  class="checkbox__input" type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}/>
+                    <label class="checkbox__label" for="remember">remember</label>
+
                 </div>
                 <p >No estás Registrado?<a href="{{route('register')}}"> Registrate</a></p>
             </div>
