@@ -14,7 +14,7 @@ body {
     z-index: 99999;
 }
 
-.nav-link:hover{
+.sidenav .nav-link:hover{
     background-color: #D7D7D7;
 }
 
