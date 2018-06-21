@@ -13,13 +13,13 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12 col-md-4 col-sm-4">
-                            <div class="avatar m-auto">
+                            <div class="avatar ml-3">
                                 @if($usuario->imagen!=null)
                                     <img src="{{ asset('imagenes/perfil/'.$usuario->imagen)}}"
-                                         class="img-fluid rounded-circle">
+                                         class=" rounded-circle  " height="160" width="160">
                                 @else
                                     <img src="{{ asset('imagenes/perfil/user-default.png')}}"
-                                         class="img-fluid rounded-circle">
+                                         class="rounded-circle "  height="160" width="160">
 
                                 @endif
                             </div>

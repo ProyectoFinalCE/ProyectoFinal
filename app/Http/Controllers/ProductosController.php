@@ -127,7 +127,7 @@ class ProductosController extends Controller
     {
 
         $this->validate($request, [
-            'imagen.*' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'imagen.*' => 'image|mimes:jpeg,png,jpg|max:3048',
             'nombre' => 'string|required|max:191',
             'precio' => 'numeric|required',
             'descripcion'=> 'string|required|max:500'
