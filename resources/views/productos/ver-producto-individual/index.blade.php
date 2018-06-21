@@ -39,8 +39,8 @@
         </a>
         </div>
     </div>
-    <div class=" row justify-content-sm-center">
-        <div id="carouselExampleIndicators" class="d-flex align-items-center carousel slide img-thumbnail " data-ride="carousel" >
+    <div class=" row justify-content-sm-center ">
+        <div id="carouselExampleIndicators" class="d-flex align-items-center carousel slide img-thumbnail col-sm-10 " data-ride="carousel" >
             <ol class="carousel-indicators">
                 @if(count($imagenes)>0)
                     @foreach( $imagenes as $imagen => $value )
