@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'apellido2'=>'string|max:30',
             'nombre_usuario'=>'required|alpha_num|max:30|unique:users',
             'email' => 'required|string|email|max:191|unique:users',
-            'password' => 'required|string|min:6|confirmed|max:191',
+            'password' => 'required|string|min:8|confirmed|max:191',
             'direccion' => 'nullable|string',
             'telefono' => 'numeric|digits:9|nullable',
             'cityLat' =>'required_with:direccion',
