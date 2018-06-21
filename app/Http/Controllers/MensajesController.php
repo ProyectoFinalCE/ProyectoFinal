@@ -200,8 +200,7 @@ class MensajesController extends Controller
 
         } catch (Exception $exception) {
             /*cambiar*/
-            Flash::error('Ha ocurrido un error al enviar el mensaje');
-            return redirect()->route('index');
+            return response()->json(['respuesta' => false]);
 
         }
 
@@ -278,6 +277,8 @@ class MensajesController extends Controller
         if (count($mensajes_nuevos) > 0) {
             foreach ($mensajes_nuevos as $mensaje) {
                 $mensaje->ha_llegado = 'true';
+
+                $mensaje->visto = 'true';
 
                 $mensaje->save();
 

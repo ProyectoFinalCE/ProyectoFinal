@@ -69,7 +69,7 @@
                                             @foreach($conversacion->mensajes as $mensaje)
                                                 @if($mensaje->enviado_por == auth()->user()->id)
                                                     <div class="d-flex justify-content-end">
-                                                        <p class="primary-color rounded p-3 text-white w-75 mb-0">{{htmlspecialchars_decode($mensaje->cuerpo_mensaje)}}</p>
+                                                        <p class="primary-color rounded caja_mensaje p-3 text-white w-75 mb-0">{{htmlspecialchars_decode($mensaje->cuerpo_mensaje)}}</p>
                                                     </div>
                                                     <div class="text-right mr-4">
                                                         <p>
@@ -87,7 +87,7 @@
                                                              src="{{asset('imagenes/perfil/user-default.png')}}"
                                                                 @endif
                                                         >
-                                                        <p class="grey lighten-3 rounded p-3 w-75 mb-0">{{htmlspecialchars_decode($mensaje->cuerpo_mensaje)}} </p>
+                                                        <p class="grey lighten-3 rounded caja_mensaje p-3 w-75 mb-0">{{htmlspecialchars_decode($mensaje->cuerpo_mensaje)}} </p>
 
                                                     </div>
                                                     <div class="fecha_recibidos text-center">
@@ -176,7 +176,7 @@
                         $('#enviar_' + id).prop("disabled", true);
                         $('#ultimo_mensaje_user_' + data.conversacion).text('Tú: ' + data.mensaje);
 
-                        $('#chat_' + id).append(" <div class='d-flex justify-content-end'><p class='primary-color rounded p-3 text-white w-75 mb-0 '>" + data.mensaje + "</p></div><div class='text-right mr-4'><p><small>" + data.dia+ " " + data.mes + "," + data.hora + ":" + data.minutos + "</small></p></div>");
+                        $('#chat_' + id).append(" <div class='d-flex justify-content-end'><p class='primary-color rounded caja_mensaje p-3 text-white w-75 mb-0 '>" + data.mensaje + "</p></div><div class='text-right mr-4'><p><small>" + data.dia+ " " + data.mes + "," + data.hora + ":" + data.minutos + "</small></p></div>");
 
                         $('#chat_' + id).scrollTop($('#chat_' + id)[0].scrollHeight);
                     } else {
@@ -221,7 +221,7 @@
 
                         $('#ultimo_mensaje_user_' + data.mensajes[i].conversacion_id).text(data.mensajes[i].user_enviado.nombre + ': ' + data.mensajes[i].cuerpo_mensaje);
 
-                        $('#chat_' + data.mensajes[i].conversacion_id).append(" <div class='d-flex justify-content-start media'> <img class='mr-3 avatar float-left' style='border-radius: 50%' src='{{asset('imagenes/perfil')}}/" + data.mensajes[i].user_enviado.imagen + "' width='65' height='65'><p class='grey lighten-3 rounded p-3 w-75 mb-0' >" + data.mensajes[i].cuerpo_mensaje + "</p></div><div class='fecha_recibidos text-center'><p><small>" + data.mensajes[i].dia + " " + data.mensajes[i].mes + "," + data.mensajes[i].hora + ":" + data.mensajes[i].minutos + "</small></p></div>");
+                        $('#chat_' + data.mensajes[i].conversacion_id).append(" <div class='d-flex justify-content-start media'> <img class='mr-3 avatar float-left' style='border-radius: 50%' src='{{asset('imagenes/perfil')}}/" + data.mensajes[i].user_enviado.imagen + "' width='65' height='65'><p class='grey lighten-3 rounded  caja_mensaje p-3 w-75 mb-0' >" + data.mensajes[i].cuerpo_mensaje + "</p></div><div class='fecha_recibidos text-center'><p><small>" + data.mensajes[i].dia + " " + data.mensajes[i].mes + "," + data.mensajes[i].hora + ":" + data.mensajes[i].minutos + "</small></p></div>");
                         $('#chat_' + data.mensajes[i].conversacion_id).scrollTop($('#chat_' + data.mensajes[i].conversacion_id)[0].scrollHeight);
                     }
 

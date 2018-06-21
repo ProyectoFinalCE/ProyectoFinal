@@ -14,7 +14,7 @@ justify-content-center']) !!}
             <div class="col-sm-12">
                 <div class="card contenedorImagenes container p-4">
                     <div class="form-group">
-                        <label class="btn btn-outline-info" for="image_uploads">Choose images to upload (PNG, JPG)</label>
+                        <label class="btn btn-outline-info" for="image_uploads">Elige imagenes Para cargar (.jpg, .png, .jpeg)</label>
                         <input type="file" id="image_uploads" name="imagen[]" accept=".jpg, .jpeg, .png" multiple>
                     </div>
                     <div class="preview">
@@ -75,6 +75,7 @@ justify-content-center']) !!}
             {!!Form::submit('Agregar articulo',['class'=>'btn btn-outline-primary','id' => 'guardarProducto'])!!}
         </div>
     </div>
+</div>
     {!! Form::close() !!}
 @endsection
  

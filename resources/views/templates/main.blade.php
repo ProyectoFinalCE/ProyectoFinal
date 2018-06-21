@@ -100,7 +100,7 @@
 
     $(document).ready(function ()
     {
-
+        var route= "{{route('notificaciones')}}";
         $.ajax({
             type: "GET",
             dataType: "json",
@@ -140,16 +140,9 @@
                 }
             }
         })
-        $(window).resize(function(){
-			    var footerHeight = $('.footer').outerHeight();
-			    var stickFooterPush = $('.push').height(footerHeight);
-		
-    			$('main').css({'marginBottom':'-' + footerHeight + 'px'});
-		    });
-		
-    		$(window).resize();
-            
-        var route= "{{route('notificaciones')}}";
+
+
+
     })
     @endauth
 

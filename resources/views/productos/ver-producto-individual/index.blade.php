@@ -81,11 +81,13 @@
 
         @endguest
         @auth
+            @if(auth()->user()->id != $usuario_producto->id)
         @if($producto_favorito==true)
             <a class="text-muted col-sm-4"  id="poner_favorito"><i class="far fa-2x fa-heart  text-danger icono-rojo"></i>Quitar de favoritos</a>
         @else
             <a class="text-muted col-sm-4"  id="poner_favorito"><i class="far fa-2x fa-heart text-dark icono-negro"></i>Añadir a favoritos</a>
         @endif
+            @endif
             @endauth
 
     </div>
@@ -165,10 +167,15 @@
                     if(data!=='' && data=='si') {
                        $('#poner_favorito').empty();
                        $('#poner_favorito').append("<i class='far fa-2x fa-heart text-danger icono-rojo'></i>Quitar de  favoritos")
+                        alert('El producto se añadio a favoritos')
+
 
                     }else{
                         $('#poner_favorito').empty();
                         $('#poner_favorito').append("<i class='far fa-2x fa-heart text-dark icono-negro '></i>Añadir a favoritos")
+
+                        alert('El producto se eliminó de favoritos')
+
                     }
                 }
             })

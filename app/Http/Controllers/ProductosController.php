@@ -27,8 +27,14 @@ class ProductosController extends Controller
 
         $productos = ($request->query()) ? $this->filtrarProductos($request->query()) : Producto::where('vendido', '=', 'false')->orderBy('created_at', 'desc');
 
-        $productos = $productos->paginate(8);
-        
+
+
+        if(count($request->query())<=2 && isset($request->query()['page']) || isset($request->query()['buscar']) || empty($request->query()['buscar'])){
+            $productos = $productos->orderBy('created_at', 'desc')->paginate(8);
+        }
+        else{
+            $productos = $productos->paginate(8);
+        }
 
         self::creado_desde($productos);
 
@@ -166,6 +172,7 @@ class ProductosController extends Controller
         $producto = Producto::find($id);
 
         $categorias = Categoria::orderBy('nombre', 'ASC')->pluck('nombre', 'id');
+
 
         if (auth()->user()->id == $producto->user_id) {
 

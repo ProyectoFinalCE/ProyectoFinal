@@ -5,7 +5,7 @@
 @section('titulo_pagina', 'Mis Favoritos')
 
 @section('contenido')
-
+    <h1 class="h1 text-center mb-4"> Mis Productos Favoritos</h1>
 @if(count($productos_favoritos) > 0)
 
     @foreach($productos_favoritos->chunk(4) as $productChunk)
@@ -43,7 +43,6 @@
 
 
     @else
-    <h1>No tienes productos favoritos</h1>
     @endif
 @endsection
 <!-- seccion  de los enlaces de scripts-->

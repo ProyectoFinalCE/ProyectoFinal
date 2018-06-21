@@ -15,7 +15,7 @@
             <div class="col-sm-12">
                 <div class="card contenedorImagenes container p-4">
                     <div class="form-group">
-                        <label class="btn btn-outline-info" for="image_uploads">Choose images to upload (PNG, JPG)</label>
+                        <label class="btn btn-outline-info" for="image_uploads">Elige imagenes Para cargar (.jpg, .png, .jpeg)</label>
                         <input type="file" id="image_uploads" name="imagen[]" accept=".jpg, .jpeg, .png" multiple>
                     </div>
                     <div class="preview">
@@ -46,7 +46,7 @@
         </div>
         <div class="form-group form-row mt-4">
             <div class="col-sm-4 ">
-                {!! Form::select('categoria_id',$categorias,$producto->categoria->nombre,['class'=>'form-control mt-2','required']) !!}
+                {!! Form::select('categoria_id',$categorias,$producto->categoria->id,['class'=>'form-control mt-2','required']) !!}
             </div>
             @if ($errors->has('categoria'))
             <span class="invalid-feedback">
@@ -59,7 +59,7 @@
             <div class="form-group shadow-textarea">
                 <textarea class="form-control z-depth-1 {{ $errors->has('descripcion') ? ' invalid' : '' }}" id="descripcion" required rows="8"
                     placeholder="Escribir descripción del producto" name="descripcion" maxlength="500" oninvalid="this.setCustomValidity('Longitud maxima de 500 caracteres')"
-                    oninput="this.setCustomValidity('')">{{ old('descripcion') }}</textarea>
+                    oninput="this.setCustomValidity('')">{{ old('descripcion') }} {{$producto->descripcion}}</textarea>
             </div>
             @if ($errors->has('descripcion'))
             <span class="invalid-feedback ">

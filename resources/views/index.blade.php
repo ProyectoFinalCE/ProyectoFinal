@@ -11,7 +11,7 @@
     <div class="col-lg-4">
         {{ Form::open(['route' => ['buscador'], 'method' => 'GET', 'class' => 'form-inline']) }}
         <div class="md-form my-0 ">
-            {{ Form::text('buscar', old('buscar'), array('placeholder'=>'Buscar...','class'=>'form-control mr-sm-2','aria-label'=>'buscar'))
+            {{ Form::text('buscar', old('buscar'), array('placeholder'=>'Buscar Productos...','class'=>'form-control mr-sm-2','aria-label'=>'buscar'))
             }}
             <button class="btn btn-outline-primary btn-sm d-inline" type="submit">Buscar</button>
         </div>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group col-lg-4 col-md-5">
                     <h4><label for="orden">Orden</label></h4>
-                    {!! Form::select('orden',array( 'precio,asc' => 'Precio ascendiente', 'precio,desc' => 'Precio descendente', 'created_at,desc'
+                    {!! Form::select('orden',array( 'precio,asc' => 'Precio ascendente', 'precio,desc' => 'Precio descendente', 'created_at,desc'
                     => 'Más nuevos primero', 'created_at,asc' => 'Más antiguos primero'),null,['class'=>'form-control'])
                     !!}
                     <hr>

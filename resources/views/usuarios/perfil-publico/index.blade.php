@@ -98,10 +98,10 @@
                                                 <img src="{{ asset('imagenes/productos/'.$producto->imagen[0]->nombre) }}"
                                                      alt="Imagen del producto" style="width:100%;border-radius: 1em"
                                                      height="160"
-                                                     class="card-img-top mt-2 ml-2 mb-2 img-responsive"> @else
+                                                     class="card-img-top mt-2 ml-2 mb-2 img-responsive imagen_prod_perfil"> @else
                                                 <img src="{{ asset('imagenes/productos/fakeapop_default.png') }}"
                                                      alt="Imagen del producto" style="width:100%;border-radius: 1em"
-                                                     height="160" class="img-responsive mb-2  mt-2 ml-2">
+                                                     height="160" class="img-responsive imagen_prod_perfil mb-2  mt-2 ml-2">
                                             @endif
                                         </div>
                                         <div class=" col-md-8">
@@ -142,7 +142,7 @@
                                                      class="card-img-top mt-2 ml-2 img-responsive mb-2"> @else
                                                 <img src="{{ asset('imagenes/productos/fakeapop_default.png') }}"
                                                      alt="Imagen del producto" style="width:100%;border-radius: 1em"
-                                                     height="160" class="img-responsive  mt-2 ml-2 mb-2">
+                                                     height="160" class="img-responsive imagen_prod_perfil mt-2 ml-2 mb-2">
                                             @endif
                                         </div>
                                         <div class=" col-md-8">
@@ -150,7 +150,7 @@
                                                 <h4 class="card-title"> {{ $producto->nombre }} </h4>
                                                 <p class="card-text h3"> {{ $producto->precio }} €</p>
                                                 <a href="{{route('ver_producto',$producto->id)}}"
-                                                   class="btn btn-outline-info"> Mas datos </a>
+                                                   class="btn btn-outline-info imagen_prod_perfil"> Mas datos </a>
                                                 <p class="card-text h3 text-right"> creado
                                                     hace {{$producto->diferencia}}</p>
                                             </div>

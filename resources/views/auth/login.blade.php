@@ -61,7 +61,7 @@
                 <div class="checkbox  justify-content-start">
 
                         <input  class="checkbox__input" type="checkbox" id="remember" name="remember" {{ old('remember') ? 'checked' : '' }}/>
-                    <label class="checkbox__label" for="remember">remember</label>
+                    <label class="checkbox__label" for="remember">Recuerdame</label>
 
                 </div>
                 <p >No estás Registrado?<a href="{{route('register')}}"> Registrate</a></p>
